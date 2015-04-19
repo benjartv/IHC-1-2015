@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_proyecto: 1
+  acta_fecha: 2015-04-19
+  acta_correlativo: 1
+
+two:
+  id_proyecto: 1
+  acta_fecha: 2015-04-19
+  acta_correlativo: 1

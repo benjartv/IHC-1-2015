@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Acta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id proyecto</th>
+      <th>Acta fecha</th>
+      <th>Acta correlativo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acta.each do |actum| %>
+      <tr>
+        <td><%= actum.id_proyecto %></td>
+        <td><%= actum.acta_fecha %></td>
+        <td><%= actum.acta_correlativo %></td>
+        <td><%= link_to 'Show', actum %></td>
+        <td><%= link_to 'Edit', edit_actum_path(actum) %></td>
+        <td><%= link_to 'Destroy', actum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Acta', new_actum_path %>

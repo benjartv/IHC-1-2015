@@ -1,0 +1,29 @@
+<%= form_for(@actum) do |f| %>
+  <% if @actum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@actum.errors.count, "error") %> prohibited this actum from being saved:</h2>
+
+      <ul>
+      <% @actum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_proyecto %><br>
+    <%= f.number_field :id_proyecto %>
+  </div>
+  <div class="field">
+    <%= f.label :acta_fecha %><br>
+    <%= f.date_select :acta_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :acta_correlativo %><br>
+    <%= f.number_field :acta_correlativo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

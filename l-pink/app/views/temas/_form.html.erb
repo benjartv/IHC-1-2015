@@ -1,0 +1,33 @@
+<%= form_for(@tema) do |f| %>
+  <% if @tema.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tema.errors.count, "error") %> prohibited this tema from being saved:</h2>
+
+      <ul>
+      <% @tema.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_acta %><br>
+    <%= f.number_field :id_acta %>
+  </div>
+  <div class="field">
+    <%= f.label :tema_nombre %><br>
+    <%= f.text_field :tema_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :tema_descripcion %><br>
+    <%= f.text_area :tema_descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :tema_estado %><br>
+    <%= f.text_field :tema_estado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

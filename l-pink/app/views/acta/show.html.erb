@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id proyecto:</strong>
+  <%= @actum.id_proyecto %>
+</p>
+
+<p>
+  <strong>Acta fecha:</strong>
+  <%= @actum.acta_fecha %>
+</p>
+
+<p>
+  <strong>Acta correlativo:</strong>
+  <%= @actum.acta_correlativo %>
+</p>
+
+<%= link_to 'Edit', edit_actum_path(@actum) %> |
+<%= link_to 'Back', acta_index_path %>
