@@ -1,11 +1,6 @@
-default:
-
-toolbar_location: top
-toolbar_align: left
-statusbar_location: bottom
-buttons3_add:
-  - tablecontrols
-  - fullscreen
-
-alternate:
-	toolbar: false
+toolbar:
+  - styleselect | bold italic | undo redo
+  - image | link
+plugins:
+  - image
+  - link

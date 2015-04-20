@@ -15,11 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require materialize
-//= require tinymce
-//= require bootstrap-datepicker
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+//= require tinymce-jquery
+//= require jquery.contextMenu.js
 //= require_tree .
 
 

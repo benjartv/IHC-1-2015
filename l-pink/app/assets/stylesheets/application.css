@@ -15,7 +15,8 @@
  *= require materialize
  *= require paletaColores
  *= require font-awesome
- *= require bootstrap-datepicker3
+ *= require jquery.contextMenu.css
+
  */
 
 
