@@ -4,6 +4,7 @@
 
 <table>
   <thead>
+    <div id='menu izq'>
     <tr>
       <th>Acta</th>
       <th>Tema nombre</th>
@@ -11,29 +12,39 @@
       <th>Tema estado</th>
       <th colspan="3"></th>
     </tr>
+    </div>
+    <div id='der'>
+    <tr>
+      <th>Acta</th>
+      <th>Tema nombre</th>
+      <th>Tema descripcion</th>
+      <th>Tema estado</th>
+      <th colspan="3"></th>
+
+    </tr>
+    </div>
   </thead>
 
   <tbody>
     <% @temas.each do |tema| %>
       <tr>
+        <td><%= tema.id %></td>
         <td><%= tema.acta_id %></td>
         <td><%= tema.tema_nombre %></td>
         <td><%= tema.tema_descripcion %></td>
         <td><%= tema.tema_estado %></td>
-        <td><%= link_to 'Show', tema %></td>
-        <td><%= link_to 'Edit', edit_tema_path(tema) %></td>
-        <td><%= link_to 'Destroy', tema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', tema, class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_tema_path(tema),  class: 'btn btn-primary btn-xs' %></td>
         <td>
-            <tr> 
-
+            
               <% @elementos.each do | elemento| %>
 
               <% if elemento.tema_id == tema.id %> 
 
               <tr>
 
-                <td><%= elemento.tipoElemento_id %></td>
-                <td><%= elemento.elemento_descripcion %></td>
+                  <td><%= elemento.tipoElemento_id %></td>
+                 <td><%= elemento.elemento_descripcion %></td>
                 <td><%= elemento.elemento_fechaInicio%></td>
                 <td><%= elemento.elemento_fechaFinal %></td>
 
@@ -55,5 +66,7 @@
 
 <br>
 
-<%= link_to 'Nuevo Tema', new_tema_path %>
-<%= link_to 'Volver a mis proyectos', 'proyectos#index' %>
+<%= link_to 'Nuevo Tema', new_tema_path, class: 'btn btn-success' %>
+<%= link_to 'Volver a mis proyectos', 'proyectos#index', class: 'btn btn-success' %>
+
+

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tus Proyectos</h1>
+    <div class="valign-wrapper">
+        <h4 class="valign" >Tus Proyectos</h4>
+    </div>
 
 <table>
   <thead>
@@ -15,13 +17,13 @@
 
   <tbody>
     <% @proyectos.each do |proyecto| %>
-      <tr>
+      <tr class="nav nav-tabs" role="tablist">
         <td><%= proyecto.proyecto_nombre %></td>
         <td><%= proyecto.proyecto_descripcion %></td>
         <td><%= proyecto.proyecto_inicio %></td>
         <td><%= proyecto.proyecto_final %></td>
-        <td><%= link_to 'Edit', edit_proyecto_path(proyecto) %></td>
-        <td><%= link_to 'Ver Proyecto', {:controller => 'acta', :action => 'index', :parametro => proyecto.id } %></td>
+        <td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Ver Proyecto', {:controller => 'acta', :action => 'index', :parametro => proyecto.id }, class: 'btn btn-primary btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +31,9 @@
 
 <br>
 
-<%= link_to 'New Proyecto', new_proyecto_path %>
+<%= link_to 'New Proyecto', new_proyecto_path, class: 'btn btn-success' %>
+
+  
+
+
+     

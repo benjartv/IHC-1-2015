@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   resources :elementos
   resources :tipo_elementos
   resources :temas

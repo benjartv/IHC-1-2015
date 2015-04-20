@@ -19,6 +19,7 @@ class TemasController < ApplicationController
 
   # GET /temas/new
   def new
+    @valorActa = params[:otroparametro]
     @tema = Tema.new
   end
 
@@ -29,6 +30,7 @@ class TemasController < ApplicationController
   # POST /temas
   # POST /temas.json
   def create
+    @valor = params[:parametroActa]
     @tema = Tema.new(tema_params)
 
     respond_to do |format|

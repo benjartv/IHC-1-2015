@@ -17,8 +17,8 @@
         <td><%= actum.proyecto_id %></td>
         <td><%= actum.acta_fecha %></td>
         <td><%= actum.acta_correlativo %></td>
-        <td><%= link_to 'Edit', edit_actum_path(actum) %></td>
-        <td><%= link_to 'Mostrar', {:controller => 'temas', :action => 'index', :parametro => actum.proyecto_id, :otroparametro => actum.id}%></td>
+        <td><%= link_to 'Edit', edit_actum_path(actum), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Mostrar', {:controller => 'temas', :action => 'index', :parametro => actum.proyecto_id, :otroparametro => actum.id},class: 'btn btn-primary btn-xs'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +26,5 @@
 
 <br>
 
-<%= link_to 'Nueva Acta dialogica', new_actum_path %>
-<%= link_to 'Volver a mis Proyectos', 'proyectos#index' %>
+<%= link_to 'Nueva Acta dialogica', new_actum_path, class: 'btn btn-success' %>
+<%= link_to 'Volver a mis Proyectos', 'proyectos#index', class: 'btn btn-success' %>
