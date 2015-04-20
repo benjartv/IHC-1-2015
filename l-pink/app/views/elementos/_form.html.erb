@@ -1,0 +1,37 @@
+<%= form_for(@elemento) do |f| %>
+  <% if @elemento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@elemento.errors.count, "error") %> prohibited this elemento from being saved:</h2>
+
+      <ul>
+      <% @elemento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipoElemento_id %><br>
+    <%= f.number_field :tipoElemento_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tema_id %><br>
+    <%= f.number_field :tema_id %>
+  </div>
+  <div class="field">
+    <%= f.label :elemento_descripcion %><br>
+    <%= f.text_area :elemento_descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :elemento_fechaInicio %><br>
+    <%= f.date_select :elemento_fechaInicio %>
+  </div>
+  <div class="field">
+    <%= f.label :elemento_fechaFinal %><br>
+    <%= f.date_select :elemento_fechaFinal %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -17,8 +17,8 @@ class ActaControllerTest < ActionController::TestCase
   end
 
   test "should create actum" do
-    assert_difference('Acta.count') do
-      post :create, actum: { acta_correlativo: @actum.acta_correlativo, acta_fecha: @actum.acta_fecha, id_proyecto: @actum.id_proyecto }
+    assert_difference('Actum.count') do
+      post :create, actum: { acta_correlativo: @actum.acta_correlativo, acta_fecha: @actum.acta_fecha, proyecto_id: @actum.proyecto_id }
     end
 
     assert_redirected_to actum_path(assigns(:actum))
@@ -35,15 +35,15 @@ class ActaControllerTest < ActionController::TestCase
   end
 
   test "should update actum" do
-    patch :update, id: @actum, actum: { acta_correlativo: @actum.acta_correlativo, acta_fecha: @actum.acta_fecha, id_proyecto: @actum.id_proyecto }
+    patch :update, id: @actum, actum: { acta_correlativo: @actum.acta_correlativo, acta_fecha: @actum.acta_fecha, proyecto_id: @actum.proyecto_id }
     assert_redirected_to actum_path(assigns(:actum))
   end
 
   test "should destroy actum" do
-    assert_difference('Acta.count', -1) do
+    assert_difference('Actum.count', -1) do
       delete :destroy, id: @actum
     end
 
-    assert_redirected_to acta_index_path
+    assert_redirected_to acta_path
   end
 end

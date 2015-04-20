@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+
+
+  resources :elementos
+  resources :tipo_elementos
   resources :temas
   resources :acta
   resources :proyectos
+
+
 
 
   root 'proyectos#index'

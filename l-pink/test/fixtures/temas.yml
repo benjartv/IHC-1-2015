@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_acta: 1
+  acta_id: 1
   tema_nombre: MyString
   tema_descripcion: MyText
   tema_estado: MyString
 
 two:
-  id_acta: 1
+  acta_id: 1
   tema_nombre: MyString
   tema_descripcion: MyText
   tema_estado: MyString

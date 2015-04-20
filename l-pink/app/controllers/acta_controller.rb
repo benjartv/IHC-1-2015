@@ -4,7 +4,10 @@ class ActaController < ApplicationController
   # GET /acta
   # GET /acta.json
   def index
-    @acta = Acta.all
+    #@acta = Actum.all
+    @valor = params[:parametro]
+    @acta = Acta.where(:proyecto_id => @valor)
+    logger.info @valor
   end
 
   # GET /acta/1
@@ -12,9 +15,18 @@ class ActaController < ApplicationController
   def show
   end
 
+  def mostrar
+
+    @valor = params[:parametro]
+    @acta = Acta.where(:proyecto_id => @valor)
+    logger.info 'esto es el index'
+    logger.info @valor
+
+  end
+
   # GET /acta/new
   def new
-    @actum = Acta.new
+    @actum = Actum.new
   end
 
   # GET /acta/1/edit
@@ -24,25 +36,30 @@ class ActaController < ApplicationController
   # POST /acta
   # POST /acta.json
   def create
-    @actum = Acta.new(actum_params)
+    @actum = Actum.new(actum_params)
 
-    respond_to do |format|
+        respond_to do |format|
       if @actum.save
-        format.html { redirect_to @actum, notice: 'Acta was successfully created.' }
+        format.html { redirect_to :controller => 'acta', :action => 'index', :parametro => @actum.proyecto_id, notice: 'Acta was successfully created.' }
         format.json { render :show, status: :created, location: @actum }
+        logger.info 'esto es el create positivo'
+        logger.info @actum.proyecto_id
+
       else
-        format.html { render :new }
+        format.html { redirect_to :controller => 'acta', :action => 'index', :parametro => @actum.proyecto_id, notice: 'Acta was successfully created mala.' }
         format.json { render json: @actum.errors, status: :unprocessable_entity }
       end
     end
+    
   end
+
 
   # PATCH/PUT /acta/1
   # PATCH/PUT /acta/1.json
   def update
     respond_to do |format|
       if @actum.update(actum_params)
-        format.html { redirect_to @actum, notice: 'Acta was successfully updated.' }
+        format.html { redirect_to @actum, notice: 'Actum was successfully updated.' }
         format.json { render :show, status: :ok, location: @actum }
       else
         format.html { render :edit }
@@ -56,7 +73,7 @@ class ActaController < ApplicationController
   def destroy
     @actum.destroy
     respond_to do |format|
-      format.html { redirect_to acta_index_url, notice: 'Acta was successfully destroyed.' }
+      format.html { redirect_to acta_url, notice: 'Actum was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +81,11 @@ class ActaController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_actum
-      @actum = Acta.find(params[:id])
+      @actum = Actum.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def actum_params
-      params.require(:actum).permit(:id_proyecto, :acta_fecha, :acta_correlativo)
+      params.require(:actum).permit(:proyecto_id, :acta_fecha, :acta_correlativo)
     end
 end

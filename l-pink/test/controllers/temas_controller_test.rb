@@ -18,7 +18,7 @@ class TemasControllerTest < ActionController::TestCase
 
   test "should create tema" do
     assert_difference('Tema.count') do
-      post :create, tema: { id_acta: @tema.id_acta, tema_descripcion: @tema.tema_descripcion, tema_estado: @tema.tema_estado, tema_nombre: @tema.tema_nombre }
+      post :create, tema: { acta_id: @tema.acta_id, tema_descripcion: @tema.tema_descripcion, tema_estado: @tema.tema_estado, tema_nombre: @tema.tema_nombre }
     end
 
     assert_redirected_to tema_path(assigns(:tema))
@@ -35,7 +35,7 @@ class TemasControllerTest < ActionController::TestCase
   end
 
   test "should update tema" do
-    patch :update, id: @tema, tema: { id_acta: @tema.id_acta, tema_descripcion: @tema.tema_descripcion, tema_estado: @tema.tema_estado, tema_nombre: @tema.tema_nombre }
+    patch :update, id: @tema, tema: { acta_id: @tema.acta_id, tema_descripcion: @tema.tema_descripcion, tema_estado: @tema.tema_estado, tema_nombre: @tema.tema_nombre }
     assert_redirected_to tema_path(assigns(:tema))
   end
 

@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id acta</th>
+      <th>Acta</th>
       <th>Tema nombre</th>
       <th>Tema descripcion</th>
       <th>Tema estado</th>
@@ -16,18 +16,44 @@
   <tbody>
     <% @temas.each do |tema| %>
       <tr>
-        <td><%= tema.id_acta %></td>
+        <td><%= tema.acta_id %></td>
         <td><%= tema.tema_nombre %></td>
         <td><%= tema.tema_descripcion %></td>
         <td><%= tema.tema_estado %></td>
         <td><%= link_to 'Show', tema %></td>
         <td><%= link_to 'Edit', edit_tema_path(tema) %></td>
         <td><%= link_to 'Destroy', tema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+            <tr> 
+
+              <% @elementos.each do | elemento| %>
+
+              <% if elemento.tema_id == tema.id %> 
+
+              <tr>
+
+                <td><%= elemento.tipoElemento_id %></td>
+                <td><%= elemento.elemento_descripcion %></td>
+                <td><%= elemento.elemento_fechaInicio%></td>
+                <td><%= elemento.elemento_fechaFinal %></td>
+
+              </tr>
+
+              <% end %>
+
+              <% end %>
+            </tr>
+
+        </td>
       </tr>
     <% end %>
+
+
+
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Tema', new_tema_path %>
+<%= link_to 'Nuevo Tema', new_tema_path %>
+<%= link_to 'Volver a mis proyectos', 'proyectos#index' %>

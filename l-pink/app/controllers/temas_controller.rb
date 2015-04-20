@@ -4,7 +4,12 @@ class TemasController < ApplicationController
   # GET /temas
   # GET /temas.json
   def index
-    @temas = Tema.all
+
+    @valorProyecto = params[:parametro]
+    @valorActa = params[:otroparametro]
+
+    @temas = Tema.where(:acta_id => @valorActa)
+    @elementos = Elemento.all
   end
 
   # GET /temas/1
@@ -28,7 +33,7 @@ class TemasController < ApplicationController
 
     respond_to do |format|
       if @tema.save
-        format.html { redirect_to @tema, notice: 'Tema was successfully created.' }
+        format.html { redirect_to :controller => 'temas', :action => 'index', :otroparametro => @tema.acta_id, notice: 'Tema was successfully created.' }
         format.json { render :show, status: :created, location: @tema }
       else
         format.html { render :new }
@@ -69,6 +74,6 @@ class TemasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tema_params
-      params.require(:tema).permit(:id_acta, :tema_nombre, :tema_descripcion, :tema_estado)
+      params.require(:tema).permit(:acta_id, :tema_nombre, :tema_descripcion, :tema_estado)
     end
 end

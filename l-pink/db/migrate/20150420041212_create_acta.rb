@@ -1,7 +1,7 @@
 class CreateActa < ActiveRecord::Migration
   def change
     create_table :acta do |t|
-      t.integer :id_proyecto
+      t.integer :proyecto_id
       t.date :acta_fecha
       t.integer :acta_correlativo
 

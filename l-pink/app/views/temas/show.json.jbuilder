@@ -1,1 +1,1 @@
-json.extract! @tema, :id, :id_acta, :tema_nombre, :tema_descripcion, :tema_estado, :created_at, :updated_at
+json.extract! @tema, :id, :acta_id, :tema_nombre, :tema_descripcion, :tema_estado, :created_at, :updated_at

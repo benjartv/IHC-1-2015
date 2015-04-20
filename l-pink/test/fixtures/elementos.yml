@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipoElemento_id: 1
+  tema_id: 1
+  elemento_descripcion: MyText
+  elemento_fechaInicio: 2015-04-20
+  elemento_fechaFinal: 2015-04-20
+
+two:
+  tipoElemento_id: 1
+  tema_id: 1
+  elemento_descripcion: MyText
+  elemento_fechaInicio: 2015-04-20
+  elemento_fechaFinal: 2015-04-20
