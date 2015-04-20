@@ -15,9 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require materialize
-//= require bootstrap-wysihtml5
-//= require advanced_and_extended
-//= require wysihtml-toolbar.min
+//= require tinymce
 //= require_tree .
 
 

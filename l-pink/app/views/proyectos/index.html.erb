@@ -19,7 +19,8 @@
     <% @proyectos.each do |proyecto| %>
       <tr>
         <td><%= proyecto.proyecto_nombre %></td>
-        <td><%= proyecto.proyecto_descripcion %></td>
+      
+        <td><%= raw proyecto.proyecto_descripcion %></td>
         <td><%= proyecto.proyecto_inicio %></td>
         <td><%= proyecto.proyecto_final %></td>
         <td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-primary btn-xs' %></td>
@@ -33,138 +34,7 @@
 
 <%= link_to 'Nuevo Proyecto', new_proyecto_path, class: 'btn btn-success' %>
 
-<div class="wrap">
-                       
 
-                                  <div class="ewrapper" contentEditable="false">
-                                    <div class="toolbar">
-                                      <div class="block">
-                                        <a data-wysihtml5-command="bold" title="CTRL+B"><span class="fa fa-bold"></span></a>
-                                        <a data-wysihtml5-command="italic" title="CTRL+I"><span class="fa fa-italic"></span></a>
-                                        <a data-wysihtml5-command="underline" title="CTRL+U"><span class="fa fa-underline"></span></a>
-                                        <a data-wysihtml5-command="superscript" title="sup"><span class="fa fa-superscript"></span></a>
-                                        <a data-wysihtml5-command="subscript" title="sub"><span class="fa fa-subscript"></span></a>
-                                      </div>
-                                      <div class="block">
-                                        <a data-wysihtml5-command="createLink" title="Enlace"><span class="fa fa-link"></span></a>
-                                        <a data-wysihtml5-command="removeLink" title="Quitar enlace"><s></s><span class="fa fa-unlink"></span></a>
-                                        <a data-wysihtml5-command="insertImage" title="Insertar imagen"><span class="fa fa-file-image-o"></span></a>
-                                        <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a>
-                                        <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a>
-                                        <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h3">h3</a>
-                                        <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">p</a>
-                                        <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="pre" title="Insertar cuadro"><span class="fa fa-square-o"></span></a>
-                                        <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-blank-value="true" title="Texto plano">T</a>
-                                        <a data-wysihtml5-command="insertBlockQuote" title="BlockQuote">BQ</a>
-                                        <a data-wysihtml5-command="formatCode" data-wysihtml5-command-value="language-html" title="Insertar Código"><span class="fa fa-code"></span></a>
-                                      </div>
-                                      
-                                      <div class="block">
-                                        <a data-wysihtml5-command="fontSizeStyle" title="Tamaño letra"><span class="fa fa-text-height"></span></a>
-                                        <div data-wysihtml5-dialog="fontSizeStyle" style="display: none;">
-                                          Size:
-                                          <input type="text" data-wysihtml5-dialog-field="size" style="width: 60px;" value="" />
-                                          <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-                                        </div>
-                                      </div>
-                                      
-                                      <div class="block">
-                                        <a data-wysihtml5-command="insertUnorderedList" title="Lista no ordenada"><span class="fa fa-list-ul"></span></a>
-                                        <a data-wysihtml5-command="insertOrderedList"  title="Lista numerada"><span class="fa fa-list-ol"></span></a>
-                                      </div>
-                                      <div class="block">
-                                        <a data-wysihtml5-command="outdentList">&lt;-</a>
-                                        <a data-wysihtml5-command="indentList">-&gt;</a>
-                                      </div>
-                                      <div class="block">
-                                        <a data-wysihtml5-command="justifyFull" title="Texto justificado"><span class="fa fa-align-justify"></span></a>
-                                      </div>
-
-                                      <div class="block">
-                                        <a data-wysihtml5-command="alignLeftStyle"title="Alinear izquierda"><span class="fa fa-align-left"></span></a>
-                                        <a data-wysihtml5-command="alignRightStyle"title="Alinear derecha"><span class="fa fa-align-right"></span></a>
-                                        <a data-wysihtml5-command="alignCenterStyle"title="Alinear centro"><span class="fa fa-align-center"></span></a>
-                                      </div>
-                                    
-                                      <div class="block">
-                                        <a data-wysihtml5-command="foreColorStyle">Color</a>
-                                        <div data-wysihtml5-dialog="foreColorStyle" style="display: none;">
-                                          Color:
-                                          <input type="text" data-wysihtml5-dialog-field="color" value="rgba(0,0,0,1)" />
-                                          <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-                                        </div>
-                                      </div>
-                                      
-                                      <div class="block">
-                                        <a data-wysihtml5-command="bgColorStyle">BG Color</a>
-                                        <div data-wysihtml5-dialog="bgColorStyle" style="display: none;">
-                                          Color:
-                                          <input type="text" data-wysihtml5-dialog-field="color" value="rgba(0,0,0,1)" />
-                                          <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-                                        </div>
-                                      </div>
-                                      
-                                      <div class="block">
-                                        <a data-wysihtml5-command="undo" title="Deshacer"><span class="fa fa-undo"></span></a>
-                                        <a data-wysihtml5-command="redo" title="Rehacer"><span class="fa fa-repeat"></span></a>
-                                      </div>
-                                    
-                                      <div class="block">
-                                        <a data-wysihtml5-action="change_view"title="Mostrar HTML"><span class="fa fa-html5"></span></a>
-                                      </div>
-                                    
-                                      <div data-wysihtml5-dialog="createLink" style="display: none;">
-                                        <label>
-                                          Link:
-                                          <input data-wysihtml5-dialog-field="href" value="http://">
-                                        </label>
-                                        <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-                                      </div>
-                                      <div data-wysihtml5-dialog="insertImage" style="display: none;">
-                                        <label>
-                                          Image:
-                                          <input data-wysihtml5-dialog-field="src" value="http://">
-                                        </label>
-                                        <label>
-                                          Align:
-                                          <select data-wysihtml5-dialog-field="className">
-                                            <option value="">default</option>
-                                            <option value="wysiwyg-float-left">left</option>
-                                            <option value="wysiwyg-float-right">right</option>
-                                          </select>
-                                        </label>
-                                        <a data-wysihtml5-dialog-action="save">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel">Cancel</a>
-                                      </div>
-                                    </div><!-- toolbar -->
-                            <div >
-                              <div class=" panel panel-primary">
-                                <div contenteditable class="tamano editable" id="inputText" placeholder="" ></div>
-                              </div>
-                                
-                            </div>
-                          </div>
-                       </div>
-                                   <div class="col s4">
-              <!--   <textarea id="comp" class="form-control"  placeholder="" ></textarea>   -->
-                  <h6 class="alert alert-info"><FONT style="color:blue;"><span class="fa fa-clock-o"></FONT></span> Compromisos: </h6>
-                       <ul id="comp" class="collection">
-                       </ul>
-                  <br>
-                  <h6 class="alert alert-success"><FONT style="color:green;"><span class="fa fa-check-circle"></FONT></span> Acuerdos: </h6>
-                      <ul id="acuerdo" class="collection">
-                       </ul>
-                  <br>
-                  <h6 class="alert alert-warning"><FONT style="color:yellow;"><span class="fa fa-question-circle"></FONT></span> Dudas: </h6>
-                        <ul id="dudas" class="collection">
-                      </ul>
-                      
-                  <br>
-                  <h6 class="alert alert-danger"><FONT style="color:red;"><span class="fa  fa-exclamation-triangle"></FONT></span> Desacuerdos: </h6>
-                      <ul id="desacuerdos" class="collection">
-                      </ul>
-                
-            </div>
-  
 
 
      

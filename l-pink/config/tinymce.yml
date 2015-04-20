@@ -1,0 +1,11 @@
+default:
+
+toolbar_location: top
+toolbar_align: left
+statusbar_location: bottom
+buttons3_add:
+  - tablecontrols
+  - fullscreen
+
+alternate:
+	toolbar: false
