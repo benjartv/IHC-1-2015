@@ -14,7 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= materialize
+//= require materialize
+//= require bootstrap-wysihtml5
+//= require advanced_and_extended
+//= require wysihtml-toolbar.min
 //= require_tree .
 
 

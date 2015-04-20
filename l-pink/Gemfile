@@ -34,8 +34,10 @@ gem 'autoprefixer-rails'
 gem 'rake'
 gem 'therubyracer'
 
-gem "twitter-bootstrap-rails"
-gem 'bootstrap-wysihtml5-rails'
+#gem "twitter-bootstrap-rails"
+#gem 'bootstrap-wysihtml5-rails'
+gem "font-awesome-rails"
+
 
 
 # Use ActiveModel has_secure_password
