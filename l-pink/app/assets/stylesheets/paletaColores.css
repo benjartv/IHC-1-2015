@@ -1,3 +1,30 @@
+ .menupad{
+  padding-left: 20px;
+ }
+.btn{
+  background-color: #C9006E;
+}
+
+ .adaptarLogo{
+    width: 22%;
+    height: 22%;
+
+}
+.adaptarAvatar{
+    width: 50%;
+
+
+}
+ .adaptarImg{
+    width: 10%;
+    height: 10%;
+
+}
+.adaptarLogo2{
+    width: 80%;
+    height: 80%;
+
+}
 
 
 .morado-rosado{
@@ -26,6 +53,8 @@
   max-width: 1280px;
 
   width: 85%; }
+  .containTem{
+  width: 95%; }
 footer.page-footer{
 	background-color:#ad1457;
 }
@@ -802,3 +831,4 @@ button.close {
   background: transparent;
   border: 0;
 }
+

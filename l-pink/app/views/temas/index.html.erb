@@ -6,13 +6,10 @@
   <thead>
     <div id='menu izq'>
     <tr>
-      <th>Tema Numero</th>
+      <th>Tema</th>
       <th>Acta</th>
-      <th>Tema Nombre</th>
-      <th>tema descripcion</th>
-      <th>Tema estado</th>
-      <th>Tema elemento Tipo</th>
-      <th>elemento descripcion</th>
+      <th>Nombre</th>
+      <th>Estado</th>
       <th colspan="3"></th>
     </tr>
     </div>
@@ -20,26 +17,16 @@
 
   <tbody>
     <% @temas.each do |tema| %>
-      <% @elementos.each do | elemento| %>
-
-        <% if elemento.tema_id == tema.id %> 
 
       <tr>
         <td><%= tema.id %></td>
         <td><%= tema.acta_id %></td>
         <td><%= tema.tema_nombre %></td>
-        <td><%= tema.tema_descripcion %></td>
         <td><%= tema.tema_estado %></td>
-        <td><%= elemento.tipoElemento_id %></td>
-        <td><%= elemento.elemento_descripcion %></td>
         <td><%= link_to 'Mostrar', tema, class: 'btn btn-primary btn-xs' %></td>
         <td><%= link_to 'Edit', edit_tema_path(tema),  class: 'btn btn-primary btn-xs' %></td>
          </tr>  
 
-          <% end %> <!--  Fin if--> 
-           <% end %>   
-
-     
     <% end %>
 
 

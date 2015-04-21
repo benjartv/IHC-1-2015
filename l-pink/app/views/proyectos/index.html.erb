@@ -7,10 +7,10 @@
 <table>
   <thead>
     <tr>
-      <th>Proyecto nombre</th>
-      <th>Proyecto descripcion</th>
-      <th>Proyecto inicio</th>
-      <th>Proyecto final</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Fecha de inicio</th>
+      <th>Fecha de termino</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,8 +23,8 @@
         <td><%= raw proyecto.proyecto_descripcion %></td>
         <td><%= proyecto.proyecto_inicio %></td>
         <td><%= proyecto.proyecto_final %></td>
-        <td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-primary btn-xs' %></td>
-        <td><%= link_to 'Ver Proyecto', {:controller => 'acta', :action => 'index', :parametro => proyecto.id}, class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Editar', edit_proyecto_path(proyecto), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Mostrar', {:controller => 'acta', :action => 'index', :parametro => proyecto.id}, class: 'btn btn-primary btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>

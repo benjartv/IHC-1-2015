@@ -2,4 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Volver', acta_path, class: 'btn btn-success' %>
+<%= link_to 'Volver', {:controller => 'acta', :action => 'index', :parametro => @valor}, class: 'btn btn-primary btn-xs'%>

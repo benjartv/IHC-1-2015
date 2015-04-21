@@ -11,9 +11,14 @@
     </div>
   <% end %>
 
+  <%= @acuerdos = Array.wrap(nil) %>
+  <%= @desacuerdos  = Array.wrap(nil) %>
+  <%= @compromisos  = Array.wrap(nil) %>
+  <%= @dudas = Array.wrap(nil) %>
+
   <div class="field">
-    <%= f.label :acta_id %><br>
-    <%= f.text_field :acta_id , :value => '1', :readonly => true %>
+   <!-- <%= f.label :acta_id %><br> -->
+    <%= f.hidden_field :acta_id , :value => @valorActa , :readonly => true %>
   </div>
   <div class="field">
     <%= f.label :tema_nombre %><br>
@@ -27,6 +32,16 @@
     <%= f.label :tema_estado %><br>
     <%= f.text_field :tema_estado %>
   </div>
+
+
+  <h2> Aqui va la informacion de los tipos </h2>
+
+
+  <h4>Acuerdos</h4>
+  <h4>Desacuerdos</h4>
+  <h4>Compromisos</h4>
+  <h4>Dudas</h4>
+
   <div class="actions">
     <%= f.submit %>
   </div>

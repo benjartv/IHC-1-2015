@@ -7,6 +7,7 @@ class ActaController < ApplicationController
     #@acta = Actum.all
     @valor = params[:parametro]
     @acta = Acta.where(:proyecto_id => @valor)
+    @numero = Actum.where(:proyecto_id =>  @valor).count
     logger.info @valor
   end
 
@@ -26,7 +27,10 @@ class ActaController < ApplicationController
 
   # GET /acta/new
   def new
+    @valor = params[:parametro]
     @actum = Actum.new
+    @correlativo = Actum.where(proyecto_id: @valor).count + 1
+    logger.info @correlativo
   end
 
   # GET /acta/1/edit
@@ -59,7 +63,8 @@ class ActaController < ApplicationController
   def update
     respond_to do |format|
       if @actum.update(actum_params)
-        format.html { redirect_to @actum, notice: 'Actum was successfully updated.' }
+         format.html { redirect_to :controller => 'acta', :action => 'index', :otroparametro => @actum.id, :parametro => @actum.proyecto_id, notice: 'Acta was successfully created.' }
+       # format.html { redirect_to @actum, notice: 'Actum was successfully updated.' }
         format.json { render :show, status: :ok, location: @actum }
       else
         format.html { render :edit }
