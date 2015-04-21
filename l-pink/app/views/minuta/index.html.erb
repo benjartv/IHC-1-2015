@@ -1,0 +1,158 @@
+<h1>Minuta#index</h1>
+<p>Find me in app/views/minuta/index.html.erb</p>
+
+<h1>Detalle del Tema  ( Tema + Elemento )</h1>
+
+<% @dTema.each do |elTema| %>
+
+	<table>
+
+		<tr>
+
+			<td>Tema</td>
+			<td><%= elTema.id%></td>
+			<td>Acta</td>
+			<td><%= elTema.acta_id%></td>
+
+		</tr>
+
+	</table>
+
+	<table>
+
+		<tr>
+
+			<td> <%=  elTema.tema_descripcion %></td>
+
+		</tr>
+
+
+	</table>
+
+	<!--  Tabla para mostrar un elemento en este caso acuerdos -->
+
+
+<div class='tabla acuerdo'>
+	<table>
+		<thead>
+			<tr>
+				<td>Numero Acuerdo</td>
+				<td>Tipo de Elemento</td>
+				<td>Descripcion</td>
+				<td>Fecha de Inicio</td>
+				<td>Fecha de Termino</td>
+			</tr>
+		</thead>
+
+
+		<tbody>
+			<%  @dAcuerdo.each do |elAcuerdo| %>
+				<tr>
+					<td><%= elAcuerdo.elemento_correlativo %></td>
+					<td><%= elAcuerdo.tipoElemento_id %></td>
+					<td><%= elAcuerdo.elemento_descripcion %></td>
+					<td><%= elAcuerdo.elemento_fechaInicio %></td>
+					<td><%= elAcuerdo.elemento_fechaFinal %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+	<!--  Tabla para mostrar un elemento en este caso desacuerdo -->
+
+
+<div class='tabla Desacuerdo'>
+	<table>
+		<thead>
+			<tr>
+				<td>Numero Desacuerdo</td>
+				<td>Tipo de Elemento</td>
+				<td>Descripcion</td>
+				<td>Fecha de Inicio</td>
+				<td>Fecha de Termino</td>
+			</tr>
+		</thead>
+
+
+		<tbody>
+			<%  @dAcuerdo.each do |elAcuerdo| %>
+				<tr>
+					<td><%= elAcuerdo.elemento_correlativo %></td>
+					<td><%= elAcuerdo.tipoElemento_id %></td>
+					<td><%= elAcuerdo.elemento_descripcion %></td>
+					<td><%= elAcuerdo.elemento_fechaInicio %></td>
+					<td><%= elAcuerdo.elemento_fechaFinal %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+	<!--  Tabla para mostrar un elemento en este caso Compromiso -->
+
+
+<div class='tabla compromiso'>
+	<table>
+		<thead>
+			<tr>
+				<td>Numero compromiso</td>
+				<td>Tipo de Elemento</td>
+				<td>Descripcion</td>
+				<td>Fecha de Inicio</td>
+				<td>Fecha de Termino</td>
+			</tr>
+		</thead>
+
+
+		<tbody>
+			<%  @dAcuerdo.each do |elAcuerdo| %>
+				<tr>
+					<td><%= elAcuerdo.elemento_correlativo %></td>
+					<td><%= elAcuerdo.tipoElemento_id %></td>
+					<td><%= elAcuerdo.elemento_descripcion %></td>
+					<td><%= elAcuerdo.elemento_fechaInicio %></td>
+					<td><%= elAcuerdo.elemento_fechaFinal %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+	<!--  Tabla para mostrar un elemento en este caso Duda -->
+
+
+<div class='tabla duda'>
+	<table>
+		<thead>
+			<tr>
+				<td>Numero duda</td>
+				<td>Tipo de Elemento</td>
+				<td>Descripcion</td>
+				<td>Fecha de Inicio</td>
+				<td>Fecha de Termino</td>
+			</tr>
+		</thead>
+
+
+		<tbody>
+			<%  @dAcuerdo.each do |elAcuerdo| %>
+				<tr>
+					<td><%= elAcuerdo.elemento_correlativo %></td>
+					<td><%= elAcuerdo.tipoElemento_id %></td>
+					<td><%= elAcuerdo.elemento_descripcion %></td>
+					<td><%= elAcuerdo.elemento_fechaInicio %></td>
+					<td><%= elAcuerdo.elemento_fechaFinal %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<% end %>
+
+
+
+
+	
+

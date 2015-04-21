@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Proyecto nombre:</strong>
+  <%= @proyecto.proyecto_nombre %>
+</p>
+
+<p>
+  <strong>Proyecto descripcion:</strong>
+  <%= @proyecto.proyecto_descripcion %>
+</p>
+
+<p>
+  <strong>Proyecto inicio:</strong>
+  <%= @proyecto.proyecto_inicio %>
+</p>
+
+<p>
+  <strong>Proyecto final:</strong>
+  <%= @proyecto.proyecto_final %>
+</p>
+
+<%= link_to 'Edit', edit_proyecto_path(@proyecto),class: 'btn btn-success' %> |
+<%= link_to 'Back', proyectos_path, class: 'btn btn-success' %>

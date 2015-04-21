@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+    <div class="valign-wrapper">
+        <h4 class="valign" >Tus Proyectos</h4>
+    </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Fecha de inicio</th>
+      <th>Fecha de termino</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proyectos.each do |proyecto| %>
+      <tr>
+        <td><%= proyecto.proyecto_nombre %></td>
+      
+        <td><%= raw proyecto.proyecto_descripcion %></td>
+        <td><%= proyecto.proyecto_inicio %></td>
+        <td><%= proyecto.proyecto_final %></td>
+        <td><%= link_to 'Editar', edit_proyecto_path(proyecto), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Mostrar', {:controller => 'acta', :action => 'index', :parametro => proyecto.id}, class: 'btn btn-primary btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Proyecto', new_proyecto_path, class: 'btn btn-success' %>
+
+
+
+
+     

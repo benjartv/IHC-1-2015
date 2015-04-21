@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<h1>Listado de Actas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nº Acta</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @acta.each do |actum| %>
+      
+      <% if actum.proyecto_id = @valor%>
+
+      <tr>
+        <td><%= actum.acta_correlativo %></td>
+        <td><%= actum.acta_fecha %></td>
+        <td><%= link_to 'Editar', edit_actum_path(actum), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Mostrar', {:controller => 'temas', :action => 'index', :parametro => actum.proyecto_id, :otroparametro => actum.id},class: 'btn btn-primary btn-xs'%></td>
+      </tr>
+
+      <% end %>
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Acta dialogica',  {:controller => 'acta', :action => 'new', :parametro => @valor}  ,class: 'btn btn-success'%>
+<%= link_to 'Volver a mis Proyectos', 'proyectos#index', class: 'btn btn-success' %>

@@ -1,4 +1,47 @@
 Rails.application.routes.draw do
+
+  get 'minuta/new'
+
+  get 'minuta/create'
+
+  get 'minuta/update'
+
+  get 'minuta/edit'
+
+  get 'minuta/destroy'
+
+  get 'minuta/index'
+
+  get 'minuta/show'
+
+  get 'minuta/mostrar'
+
+  get 'mycontroller/new'
+
+  get 'mycontroller/create'
+
+  get 'mycontroller/update'
+
+  get 'mycontroller/edit'
+
+  get 'mycontroller/destroy'
+
+  get 'mycontroller/index'
+
+  get 'mycontroller/show'
+
+  get 'mycontroller/mostrar'
+
+  resources :elementos
+  resources :tipo_elementos
+  resources :temas
+  resources :acta
+  resources :proyectos
+
+
+
+
+  root 'proyectos#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

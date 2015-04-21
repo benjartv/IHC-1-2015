@@ -1,0 +1,32 @@
+<%= form_for(@actum) do |f| %>
+  <% if @actum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@actum.errors.count, "error") %> prohibited this actum from being saved:</h2>
+
+      <ul>
+      <% @actum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%=  %>
+
+  <div class="field">
+    <%= f.label :proyecto_id %><br>
+    <%= f.number_field :proyecto_id, :value => @valor, :readonly => true  %>
+  </div>
+  <div class="field">
+    <%= f.label :acta_fecha %><br>
+    <%= f.date_select :acta_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :acta_correlativo %><br>
+    <%= f.number_field :acta_correlativo, :value => @correlativo, :readonly => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Crear",:class => 'btn btn-primary btn-xs' %>
+  </div>
+<% end %>

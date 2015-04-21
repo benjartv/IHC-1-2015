@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Temas</h1>
+
+<table>
+  <thead>
+    <div id='menu izq'>
+    <tr>
+      <th>Tema</th>
+      <th>Acta</th>
+      <th>Nombre</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+    </div>
+  </thead>
+
+  <tbody>
+    <% @temas.each do |tema| %>
+
+      <tr>
+        <td><%= tema.id %></td>
+        <td><%= tema.acta_id %></td>
+        <td><%= tema.tema_nombre %></td>
+        <td><%= tema.tema_estado %></td>
+        <td><%= link_to 'Editar', edit_tema_path(tema),  class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Mostrar',{:controller => 'minuta', :action => 'index', :parametro => tema.id}, class: 'btn btn-primary btn-xs' %></td>
+         </tr>  
+
+    <% end %>
+
+
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Tema', minuta_create_path ,class: 'btn btn-success'%>
+<%= link_to 'Volver a mis proyectos', 'proyectos#index', class: 'btn btn-success' %>
+
+
