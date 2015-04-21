@@ -28,7 +28,7 @@ class ProyectosController < ApplicationController
 
     respond_to do |format|
       if @proyecto.save
-        format.html { redirect_to @proyecto, notice: 'Proyecto was successfully created.' }
+        format.html { redirect_to :controller => 'proyectos', :action => 'index', notice: 'Acta was successfully created.' }
         format.json { render :show, status: :created, location: @proyecto }
       else
         format.html { render :new }
@@ -42,7 +42,8 @@ class ProyectosController < ApplicationController
   def update
     respond_to do |format|
       if @proyecto.update(proyecto_params)
-        format.html { redirect_to @proyecto, notice: 'Proyecto was successfully updated.' }
+       # format.html { redirect_to @proyecto, notice: 'Proyecto was successfully updated.' }
+        format.html { redirect_to :controller => 'proyectos', :action => 'index', notice: 'Acta was successfully created.' }
         format.json { render :show, status: :ok, location: @proyecto }
       else
         format.html { render :edit }

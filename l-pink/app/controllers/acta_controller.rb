@@ -40,7 +40,7 @@ class ActaController < ApplicationController
 
         respond_to do |format|
       if @actum.save
-        format.html { redirect_to :controller => 'acta', :action => 'index', :parametro => @actum.proyecto_id, notice: 'Acta was successfully created.' }
+        format.html { redirect_to :controller => 'temas', :action => 'index', :otroparametro => @actum.id, :parametro => @actum.proyecto_id, notice: 'Acta was successfully created.' }
         format.json { render :show, status: :created, location: @actum }
         logger.info 'esto es el create positivo'
         logger.info @actum.proyecto_id

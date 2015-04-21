@@ -13,8 +13,7 @@
 
   <div class="field">
     <%= f.label :acta_id %><br>
-    <%= @tema.acta_id %>
-    <%= f.hidden_field :acta_id %>
+    <%= f.text_field :acta_id , :value => '1', :readonly => true %>
   </div>
   <div class="field">
     <%= f.label :tema_nombre %><br>

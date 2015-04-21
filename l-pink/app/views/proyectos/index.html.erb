@@ -24,7 +24,7 @@
         <td><%= proyecto.proyecto_inicio %></td>
         <td><%= proyecto.proyecto_final %></td>
         <td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-primary btn-xs' %></td>
-        <td><%= link_to 'Ver Proyecto', {:controller => 'acta', :action => 'index', :parametro => proyecto.id }, class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Ver Proyecto', {:controller => 'acta', :action => 'index', :parametro => proyecto.id}, class: 'btn btn-primary btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>

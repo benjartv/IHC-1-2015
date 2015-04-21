@@ -16,7 +16,8 @@
 //= require bootstrap
 //= require materialize
 //= require tinymce-jquery
-//= require jquery.contextMenu.js
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 
