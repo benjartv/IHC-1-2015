@@ -41,6 +41,9 @@ class MinutaController < ApplicationController
   end
 
   def show
+
+    @Tema = Tema.all
+
   end
 
   def mostrar
