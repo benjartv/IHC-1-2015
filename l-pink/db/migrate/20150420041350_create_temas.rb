@@ -5,6 +5,7 @@ class CreateTemas < ActiveRecord::Migration
       t.string :tema_nombre
       t.text :tema_descripcion
       t.string :tema_estado
+      t.integer :tema_correlativo
 
       t.timestamps null: false
     end

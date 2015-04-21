@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150421110110) do
     t.string   "tema_nombre",      limit: 255
     t.text     "tema_descripcion", limit: 65535
     t.string   "tema_estado",      limit: 255
+    t.integer  "tema_correlativo", limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
