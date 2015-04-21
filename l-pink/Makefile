@@ -6,3 +6,8 @@ migrate:
 
 start:
 	rails s
+
+limpiar:
+	rake tmp:cache:clear
+	rake assets:clean
+	rake tmp:clear

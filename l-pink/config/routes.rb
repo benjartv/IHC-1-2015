@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'mycontroller/new'
+
+  get 'mycontroller/create'
+
+  get 'mycontroller/update'
+
+  get 'mycontroller/edit'
+
+  get 'mycontroller/destroy'
+
+  get 'mycontroller/index'
+
+  get 'mycontroller/show'
+
+  get 'mycontroller/mostrar'
+
   resources :elementos
   resources :tipo_elementos
   resources :temas

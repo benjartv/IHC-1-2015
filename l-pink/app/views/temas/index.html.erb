@@ -23,8 +23,8 @@
         <td><%= tema.acta_id %></td>
         <td><%= tema.tema_nombre %></td>
         <td><%= tema.tema_estado %></td>
+        <td><%= link_to 'Editar', edit_tema_path(tema),  class: 'btn btn-primary btn-xs' %></td>
         <td><%= link_to 'Mostrar', tema, class: 'btn btn-primary btn-xs' %></td>
-        <td><%= link_to 'Edit', edit_tema_path(tema),  class: 'btn btn-primary btn-xs' %></td>
          </tr>  
 
     <% end %>
