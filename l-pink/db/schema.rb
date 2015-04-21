@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150420041539) do
   create_table "elementos", force: :cascade do |t|
     t.integer  "tipoElemento_id",      limit: 4
     t.integer  "tema_id",              limit: 4
+    t.integer  "elemento_correlativo", limit: 4
     t.text     "elemento_descripcion", limit: 65535
     t.date     "elemento_fechaInicio"
     t.date     "elemento_fechaFinal"

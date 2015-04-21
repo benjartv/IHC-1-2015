@@ -3,6 +3,7 @@ class CreateElementos < ActiveRecord::Migration
     create_table :elementos do |t|
       t.integer :tipoElemento_id
       t.integer :tema_id
+      t.integer :elemento_correlativo
       t.text :elemento_descripcion
       t.date :elemento_fechaInicio
       t.date :elemento_fechaFinal

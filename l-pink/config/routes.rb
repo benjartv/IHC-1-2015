@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'minuta/new'
+
+  get 'minuta/create'
+
+  get 'minuta/update'
+
+  get 'minuta/edit'
+
+  get 'minuta/destroy'
+
+  get 'minuta/index'
+
+  get 'minuta/show'
+
+  get 'minuta/mostrar'
+
   get 'mycontroller/new'
 
   get 'mycontroller/create'

@@ -7,8 +7,9 @@ class TemasController < ApplicationController
 
     @valorProyecto = params[:parametro]
     @valorActa = params[:otroparametro]
-
     @temas = Tema.where(:acta_id => @valorActa)
+    
+    # No se ocupa
     @elementos = Elemento.all
   end
 
